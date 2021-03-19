@@ -1,5 +1,6 @@
 const express = require("express")
 
+const serverdataRouter=require("./serverData/router")
 
 
 const server = express()
@@ -8,7 +9,7 @@ const server = express()
 
 server.use(express.json())
 
-
+server.use("/serverdata",serverdataRouter)
 server.get("/", (req, res) => {
 	res.json({
 		message: "Welcome to our API",
